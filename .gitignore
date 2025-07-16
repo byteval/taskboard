@@ -1,0 +1,10 @@
+/build
+/ext
+/.idea
+/vscode
+bootstrap.*
+classic.json*
+modern.json*
+.sencha
+.vscode/
+.env
