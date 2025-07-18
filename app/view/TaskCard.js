@@ -4,10 +4,13 @@ Ext.define('TaskBoard.view.TaskCard', {
     requires: [
         'TaskBoard.view.TaskEditWindow'
     ],
+    styleUrls: [
+        'TaskCard.scss'
+    ],
     cls: 'task-card-view',
     itemTpl: [
-        '<div class="task-card {priorityClass}">',
-        '<div class="task-id">{number}</div>',
+        '<div class="task-card {[values.priority ? "priority-" + values.priority.toLowerCase() : ""]}">',
+        '<div class="task-id">{number}</div>',    
         '<div class="task-title">{title}</div>',
         '</div>'
     ],
@@ -20,9 +23,5 @@ Ext.define('TaskBoard.view.TaskCard', {
             win.down('form').loadRecord(record);
             win.show();
         }
-    },
-    prepareData: function(data) {
-        data.priorityClass = data.priority ? 'priority-' + data.priority.toLowerCase() : '';
-        return data;
     }
 }); 

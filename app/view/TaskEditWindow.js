@@ -22,10 +22,9 @@ Ext.define('TaskBoard.view.TaskEditWindow', {
             handler: function (btn) {
                 var win = btn.up('window');
                 var form = win.down('form');
-                var rec = form.getRecord();
+                var record = form.getRecord();
                 if (form.isValid()) {
-                    form.updateRecord(rec);
-                    rec.store.sync();
+                    form.updateRecord(record);
                     win.close();
                 }
             }
